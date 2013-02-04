@@ -1,0 +1,21 @@
+{
+  "name": "Input Method 1",
+  "description": "Gaia Input Method",
+  "type": "certified",
+  "domain": "app://input-method-1.gaiamobiile.org",
+  "input-method": {
+    "text": {
+      "name": "English Layout",
+      "locale": "en_US",
+      "input_mode": "keyboard",
+      "launch_path": "/index.html"
+    }
+  },
+  "developer": {
+    "name": "The Gaia Team",
+    "url": "https://github.com/mozilla-b2g/gaia"
+  },
+  "permissions": {
+    "settings":{ "access": "readwrite" }
+  }
+}
