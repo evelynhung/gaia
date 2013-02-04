@@ -1,0 +1,21 @@
+{
+  "name": "Input Method 2",
+  "description": "Gaia Input Method",
+  "type": "certified",
+  "domain": "app://input-method-2.gaiamobiile.org",
+  "input-method": {
+    "text": {
+      "name": "Chinese Layout",
+      "locale": "zh_TW",
+      "input_mode": "keyboard",
+      "launch_path": "/index.html"
+    }
+  },
+  "developer": {
+    "name": "The Gaia Team",
+    "url": "https://github.com/mozilla-b2g/gaia"
+  },
+  "permissions": {
+    "settings":{ "access": "readwrite" }
+  }
+}

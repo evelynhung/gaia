@@ -3,6 +3,9 @@
 
 'use strict';
 
+// How long to wait for more focuschange events before processing
+const FOCUS_CHANGE_DELAY = 20;
+
 var ValueSelector = {
 
   _containers: {},
@@ -20,17 +23,16 @@ var ValueSelector = {
   init: function vs_init() {
 
     var self = this;
-
+    var focusChangeTimeout = 0;
     window.navigator.mozKeyboard.onfocuschange = function onfocuschange(evt) {
+      var container = document.getElementById('keyboard-frame');
       var typeToHandle = ['select-one', 'select-multiple', 'date',
         'time', 'datetime', 'datetime-local', 'blur'];
-
       var type = evt.detail.type;
       // handle the <select> element and inputs with type of date/time
       // in system app for now
-      if (typeToHandle.indexOf(type) == -1)
-        return;
-
+      //if (typeToHandle.indexOf(type) == -1)
+      //  return;
       var currentValue = evt.detail.value;
 
       switch (evt.detail.type) {
@@ -57,6 +59,38 @@ var ValueSelector = {
           self.hide();
           break;
       }
+
+      clearTimeout(focusChangeTimeout);
+      focusChangeTimeout = setTimeout(function switchKeyboard() {
+        if (type === 'blur') {
+          dispatchEvent(new CustomEvent('keyboardhide'));
+          container.classList.add('hide');
+        } else {
+          var updateHeight = function updateHeight() {
+            container.removeEventListener('transitionend', updateHeight);
+            if (container.classList.contains('hide')) {
+              // The keyboard has been closed already, let's not resize the
+              // application and ends up with half apps.
+              return;
+            }
+
+            var detail = {
+              'detail': {
+                'height': 0
+              }
+            };
+            dispatchEvent(new CustomEvent('keyboardchange', detail));
+          }
+
+          if (container.classList.contains('hide')) {
+            container.classList.remove('hide');
+            container.addEventListener('transitionend', updateHeight);
+            return;
+          }
+
+          updateHeight();
+        }
+      }, FOCUS_CHANGE_DELAY);
     };
 
     this._element = document.getElementById('value-selector');
