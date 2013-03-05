@@ -200,7 +200,7 @@ const keyboardGroups = {
 
 // This is the default keyboard if none is selected in settings
 // XXX: switch this to pt-BR?
-const defaultKeyboardNames = ['en'];
+var defaultKeyboardNames = ['en'];
 
 // If we get a focuschange event from mozKeyboard for an element with
 // one of these types, we'll just ignore it.
@@ -305,8 +305,20 @@ function getKeyboardSettings() {
     enabledKeyboardGroups = {};
     for (var group in keyboardGroups) {
       var settingName = 'keyboard.layouts.' + group;
-      enabledKeyboardGroups[settingName] = values[settingName];
+      //enabledKeyboardGroups[settingName] = values[settingName];
+      enabledKeyboardGroups[settingName] = false;
     }
+
+    // set default input method with hash value
+    if (window.location.hash !== '') {
+      console.log(enabledKeyboardGroups.toString());
+      var keyboardName = window.location.hash.substring(1);
+      for(var group in keyboardGroups) {
+        if(keyboardGroups[group].indexOf(keyboardName) !== -1) {
+          defaultKeyboardNames = [keyboardName];
+        }
+      }
+    } 
 
     // And create an array of all enabled keyboard layouts from the set
     // of enabled groups
@@ -377,6 +389,13 @@ function initKeyboard() {
     childList: true, // to detect changes in IMEngine
     attributes: true, attributeFilter: ['class', 'style', 'data-hidden']
   });
+
+  window.addEventListener('hashchange', function() {
+    var inputMethodName = window.location.hash.substring(1);
+        
+    setKeyboardName(inputMethodName);
+    resetKeyboard();
+  }, false);  
 
   // Show or hide the keyboard when we get an focuschange event
   // from the keyboard
