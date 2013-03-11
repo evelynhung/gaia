@@ -156,7 +156,7 @@ writeContent(init, JSON.stringify(content));
 // Apps that should never appear in settings > app permissions
 // bug 830659: We want homescreen to appear in order to remove e.me geolocation permission
 let hidden_apps = [
-  gaiaManifestURL('keyboard'),
+  //gaiaManifestURL('keyboard'),
   gaiaManifestURL('wallpaper'),
   gaiaManifestURL('bluetooth'),
   gaiaManifestURL('pdfjs')

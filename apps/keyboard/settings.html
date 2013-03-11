@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="pragma" content="no-cache"/>
+  <title>Keyboard Settings</title>
+
+  <!-- Common style -->
+  <link rel="stylesheet" type="text/css" href="shared/style/headers.css"/>
+  <link rel="stylesheet" type="text/css" href="shared/style/switches.css"/>
+
+  <!-- Specific style -->
+  <link rel="stylesheet" type="text/css" href="style/lists.css"/>
+  <link rel="stylesheet" type="text/css" href="style/settings.css"/>
+
+  <!-- Localization -->
+  <link rel="resource" type="application/l10n" href="locales/locales.ini"/>
+  <script defer src="shared/js/l10n.js"></script>  
+  
+  <!-- Specific code -->
+  <script defer src="js/settings.js"></script>
+</head>
+<body class="skin-organic uninit">
+  <!-- Personalization :: Keyboard -->
+  <section role="region" id="keyboard" class="current">
+    <header>
+      <!--
+      <a href="#back"><span class="icon icon-back">back</span></a>
+      -->
+      <h1 data-l10n-id="keyboard">Keyboard</h1>
+    </header>
+    <ul>
+      <li>
+        <label>
+          <input type="checkbox" name="keyboard.vibration"/>
+          <span></span>
+        </label>
+        <a data-l10n-id="vibration">Vibration</a>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="keyboard.clicksound" checked />
+          <span></span>
+        </label>
+        <a data-l10n-id="clickSound">Click sound</a>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="keyboard.wordsuggestion"/>
+          <span></span>
+        </label>
+        <a data-l10n-id="wordSuggestion">Word Suggestion</a>
+      </li>
+    </ul>
+
+    <header>
+      <h2 data-l10n-id="keyboardLayouts">Layouts</h2>
+    </header>
+    <ul>
+      <li>
+        <label>
+          <input type="checkbox" name="keyboard.layouts.english" checked />
+          <span></span>
+        </label>
+        <a data-l10n-id="english">English</a>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="keyboard.layouts.dvorak"/>
+          <span></span>
+        </label>
+        <a data-l10n-id="dvorak">English (Dvorak)</a>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="keyboard.layouts.spanish"/>
+          <span></span>
+        </label>
+        <a data-l10n-id="spanish">Spanish</a>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="keyboard.layouts.portuguese"/>
+          <span></span>
+        </label>
+        <a data-l10n-id="portuguese">Portuguese (Brazilian)</a>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="keyboard.layouts.otherlatins"/>
+          <span></span>
+        </label>
+        <small data-l10n-id="latin-desc">French, German, Norwegian Bokmal, Slovak, Turkish</small>
+        <a data-l10n-id="latin">Other Latin scripts</a>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="keyboard.layouts.cyrillic"/>
+          <span></span>
+        </label>
+        <small data-l10n-id="cyrillic-desc">Russian, Serbian (Cyrillic)</small>
+        <a data-l10n-id="cyrillic">Cyrillic scripts</a>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="keyboard.layouts.arabic"/>
+          <span></span>
+        </label>
+        <a data-l10n-id="arabic">Arabic</a>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="keyboard.layouts.hebrew"/>
+          <span></span>
+        </label>
+        <a data-l10n-id="hebrew">Hebrew</a>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="keyboard.layouts.greek"/>
+          <span></span>
+        </label>
+        <a data-l10n-id="greek">Greek</a>
+      </li>
+    </ul>
+  </section>
+</body>
+</html>
