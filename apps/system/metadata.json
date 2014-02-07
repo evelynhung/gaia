@@ -1,0 +1,15 @@
+{
+  "external": false,
+  "zip": {
+    "mmap_files": [
+      "/locales-obj/ar.data",
+      "/locales-obj/en-US.data",
+      "/locales-obj/fr.data",
+      "/locales-obj/zh-TW.data",
+      "/camera/locales-obj/ar.data",
+      "/camera/locales-obj/en-US.data",
+      "/camera/locales-obj/fr.data",
+      "/camera/locales-obj/zh-TW.data"
+    ]
+  }
+}

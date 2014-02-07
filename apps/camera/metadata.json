@@ -1,0 +1,11 @@
+{
+  "external": false,
+  "zip": {
+    "mmap_files": [
+      "/locales-obj/ar.data",
+      "/locales-obj/en-US.data",
+      "/locales-obj/fr.data",
+      "/locales-obj/zh-TW.data"
+    ]
+  }
+}
