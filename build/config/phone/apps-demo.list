@@ -1,4 +1,2 @@
-apps/*
-outoftree_apps/*
-dev_apps/crystalskull
-dev_apps/cubevid
+apps/system
+apps/keyboard
