@@ -18,6 +18,10 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background-image: url(dummy/device_deck_demo.png);
+}
+#main-section > * {
+  display: none;
 }
 section#header {
   height: 16rem;
