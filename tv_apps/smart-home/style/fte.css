@@ -102,7 +102,6 @@
   left: 105.9rem;
   bottom: 16.5rem;
 }
-
 #fte-search-detail {
   left: -10.6rem;
   top: -7.2rem;
@@ -121,4 +120,13 @@
 #fte-filter-detail {
   left: -10.6rem;
   bottom: 16.5rem;
+}
+
+#fte-key-mapping {
+  left: 12rem;
+  bottom: 3rem;
+  background-color: RGBA(30, 75, 115, 1);
+  font-size: 2.6rem;
+  padding: 1rem;
+  border-radius: 1rem;
 }
