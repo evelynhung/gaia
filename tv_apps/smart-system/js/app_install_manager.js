@@ -102,9 +102,10 @@ var AppInstallManager = {
   },
 
   isMarketplaceAppActive: function ai_isMarketplaceAppActive() {
-    const MARKETPLACE_DOMAIN = 'https://marketplace.firefox.com/';
+    const MARKETPLACE_DOMAIN = 'app://marketplace.gaiamobile.org/';
 
     var activeApp = AppWindowManager.getActiveApp();
+    console.log('////// activeApp.manifestURL ' + activeApp.manifestURL);
     return activeApp && activeApp.manifestURL.startsWith(MARKETPLACE_DOMAIN);
   },
 
