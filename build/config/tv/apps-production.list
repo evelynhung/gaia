@@ -1,3 +1,4 @@
+external-apps/*
 tv_apps/smart-system
 tv_apps/smart-settings
 tv_apps/smart-home

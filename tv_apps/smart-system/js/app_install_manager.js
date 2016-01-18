@@ -109,7 +109,7 @@ var AppInstallManager = {
   },
 
   isMarketplaceAppActive: function ai_isMarketplaceAppActive() {
-    const MARKETPLACE_DOMAIN = 'https://marketplace.firefox.com/';
+    const MARKETPLACE_DOMAIN = 'http://jostw.github.io';
 
     var activeApp = AppWindowManager.getActiveApp();
     return activeApp && activeApp.manifestURL.startsWith(MARKETPLACE_DOMAIN);
